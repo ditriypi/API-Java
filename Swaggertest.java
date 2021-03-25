@@ -74,7 +74,7 @@ public class Swaggertest {
         UserMethod usermehod = new UserMethod(user);
         usermehod.createUser();
         usermehod.deleteUser("dmitriyuxdf");
-      //  usermehod.findUser("dmitriyuxdf");
+
 
     }
 
