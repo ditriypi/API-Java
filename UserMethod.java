@@ -62,5 +62,10 @@ public  class UserMethod {
 
     }
 
+    public void deleteUser(String name){
+        given().
+                baseUri(baseURI).basePath("/user/"+name).delete().then().assertThat().statusCode(200);
+    }
+
 
 }
