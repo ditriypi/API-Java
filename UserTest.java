@@ -4,7 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class Swaggertest {
+public class UserTest {
 
 
 
