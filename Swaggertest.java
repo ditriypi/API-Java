@@ -6,6 +6,8 @@ import org.testng.annotations.Test;
 
 public class Swaggertest {
 
+
+
     @Test
     public void createUser() throws JsonProcessingException {
         User user = new User();
@@ -15,9 +17,9 @@ public class Swaggertest {
         user.setLastName("Bort");
         user.setPassword("1234dima");
         user.setPhone("880055535");
-        user.setUsername("dmitriyuxdf");
+        user.setUsername("dmitro");
         user.setUserStatus(2);
-        UserMethod usermehod = new UserMethod(user);
+        UserRequestFactory  usermehod = new UserRequestFactory(user);
         usermehod.createUser();
 
 
@@ -33,11 +35,11 @@ public class Swaggertest {
         user.setLastName("Bort");
         user.setPassword("1234dima");
         user.setPhone("880055535");
-        user.setUsername("dmitriyuxdf");
+        user.setUsername("dmitro");
         user.setUserStatus(2);
-        UserMethod usermehod = new UserMethod(user);
-        usermehod.createUser();
-        usermehod.findUser("dmitriyuxdf");
+        UserRequestFactory usermethod  = new UserRequestFactory (user);
+        usermethod.createUser();
+        usermethod.findUser("dmitro");
 
     }
 
@@ -50,15 +52,14 @@ public class Swaggertest {
         user.setLastName("Bort");
         user.setPassword("1234dima");
         user.setPhone("880055535");
-        user.setUsername("dmitriyuxdf");
+        user.setUsername("dmitro");
         user.setUserStatus(2);
-        UserMethod usermehod = new UserMethod(user);
-        usermehod.createUser();
-        usermehod.findUser("dmitriyuxdf");
-        usermehod.updateName("oldjerker");
-        usermehod.findUser("ol");
-        usermehod.findUser("dmitriyuxdf");
-        //Assert.assertNotEquals();
+        UserRequestFactory  usermethod = new  UserRequestFactory(user);
+        usermethod.createUser();
+        usermethod.findUser("dmitro");
+        user.setEmail("Imdon@fmail.com");
+        usermethod.updateUser(user);
+        Assert.assertEquals(user.getEmail(),"Imdon@fmail.com");
     }
     @Test
     public void deleteUser() throws JsonProcessingException {
@@ -69,11 +70,11 @@ public class Swaggertest {
         user.setLastName("Bort");
         user.setPassword("1234dima");
         user.setPhone("880055535");
-        user.setUsername("dmitriyuxdf");
+        user.setUsername("dmitro");
         user.setUserStatus(2);
-        UserMethod usermehod = new UserMethod(user);
-        usermehod.createUser();
-        usermehod.deleteUser("dmitriyuxdf");
+        UserRequestFactory usermethod = new UserRequestFactory(user);
+        usermethod.createUser();
+        usermethod.deleteUser("dmitro");
 
 
     }
